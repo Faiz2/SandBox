@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "ListeningSandBoxOss",
+  "namespace": "com.pharbers.kafka.schema",
+  "fields": [
+    {
+      "name": "Path",
+      "type": "string"
+    }
+  ]
+}

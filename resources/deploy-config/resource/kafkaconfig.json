@@ -1,0 +1,11 @@
+{
+  "Broker":"pharbers.com:9092",
+  "SchemaRepositoryUrl":"http://pharbers.com:8081",
+  "Group":"ListeningSandBoxOss",
+  "CaLocation":"/snakeoil-ca-1.crt",
+  "CaSignedLocation":"/kafkacat-ca1-signed.pem",
+  "SslKeyLocation":"/kafkacat.client.key",
+  "Pass":"pharbers",
+  "Topics": [
+  ]
+}

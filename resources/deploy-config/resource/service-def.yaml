@@ -1,0 +1,100 @@
+models:
+- SandBoxIndex
+- FileMetaDatum
+- FileVersion
+
+storages:
+- name: SandBoxIndexStorage
+  method: NewSandBoxIndexStorage
+  daemons:
+  - BmMongodbDaemon
+- name: FileMetaDatumStorage
+  method: NewFileMetaDatumStorage
+  daemons:
+  - BmMongodbDaemon
+- name: FileVersionStorage
+  method: NewFileVersionStorage
+  daemons:
+  - BmMongodbDaemon
+
+resources:
+- name: SandBoxIndexResource
+  method: NewSandBoxIndexResource
+  storages:
+  - SandBoxIndexStorage
+- name: FileMetaDatumResource
+  method: NewFileMetaDatumResource
+  storages:
+  - FileMetaDatumStorage
+  - SandBoxIndexStorage
+- name: FileVersionResource
+  method: NewFileVersionResource
+  storages:
+  - FileVersionStorage
+  - FileMetaDatumStorage
+
+services:
+- name: sand-box-index
+  model: SandBoxIndex
+  resource: SandBoxIndexResource
+- name: file-meta-data
+  model: FileMetaDatum
+  resource: FileMetaDatumResource
+- name: file-version
+  model: FileVersion
+  resource: FileVersionResource
+
+functions:
+- name: GetAccountDetailHandler
+  create: NewGetAccountDetailHandler
+  http: POST
+  method: GetAccountDetail
+  daemons:
+  - BmMongodbDaemon
+  - BmRedisDaemon
+  args:
+  - oauth.pharbers.com
+- name: PutHDFSHandler
+  create: NewPutHDFSHandler
+  http: POST
+  method: PutHDFS
+  daemons:
+  - BmMongodbDaemon
+  - BmRedisDaemon
+  args:
+  - http://www.pharbers.com:60106/v0/SendMail
+  - EMAILADDRESS
+
+middlewares:
+- name: CheckTokenMiddleware
+  create: NewCheckTokenMiddleware
+  daemons:
+  - BmMongodbDaemon
+  - BmRedisDaemon
+  args:
+  - oauth.pharbers.com
+- name: CheckPermissionMiddleware
+  create: NewCheckPermissionMiddleware
+  daemons:
+  - BmMongodbDaemon
+  - BmRedisDaemon
+  args:
+  - name
+
+panic:
+  name: CommonPanicHandle
+  create: NewCommonPanicHandle
+
+daemons:
+- name: BmMongodbDaemon
+  method: NewMongoDBDaemon
+  args:
+    host: mongo
+    port: 27017
+    database: pharbers-sandbox
+- name: BmRedisDaemon
+  method: NewRedisDBDaemon
+  args:
+    host: redis
+    port: 6379
+    password:

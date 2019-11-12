@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>SandBox</title>
+</head>
+<body>
+    <div>
+        <table style='font-size: 12px; border: 0px solid #888888; border-collapse: collapse; font-family: Arial,Helvetica,sans-serif; margin-top: 10px; width: 100%;'>
+            <tr>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>上传者</td>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>**UserName**</td>
+            </tr>
+            <tr>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>文件名称</td>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>**FileName**<td>
+            </tr>
+            <tr>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>文件类型</td>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>**FileType**</td>
+            </tr>
+            <tr>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>文件总行数</td>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>**FileLength**</td>
+            </tr>
+            <tr>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>文件预览（前5行 未做格式处理）</td>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>**FilePreview**</td>
+            </tr>
+            <tr>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>上传时间</td>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>**UploadTime**</td>
+            </tr>
+            <tr>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>线上SandBox登入链接</td>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'><a href='http://sandbox.pharbers.com'>http://sandbox.pharbers.com</a></td>
+            </tr>
+            <tr>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>线下HDFS路径</td>
+                <td style='background-color: #f0f4f4; border: 1px solid #a7bcbe; padding: 5px 15px 5px 5px; vertical-align: text-top;'>**HDFSPATH**</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
